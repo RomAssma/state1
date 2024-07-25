@@ -18,8 +18,6 @@ class App extends Component{
 handleClick=() =>{
   this.setState({shows:!this.state.shows})
 }
-
-
 componentDidMount() {
   this.interval= setInterval(() => {
     this.setState((prevState) => {
@@ -33,25 +31,25 @@ componentWillUnmount(){
     render() {
       return (
         <div>
-          {this.state.shows && (
-            <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={image} />
-              <Card.Body>
-                <Card.Title>{this.state.person.fullName}</Card.Title>
-                <Card.Text>
-                  {this.state.person.bio} <br/>
-                  {this.state.person.profession}
-                </Card.Text>
-              
-              </Card.Body>
-            </Card>
-          )}
-  
-          <Button className="bt" onClick={this.handleClick}>
-            {this.state.shows ? "Hide Profile" : "Show Profile"}
-          </Button>
-          <h1>{this.state.mountTime}</h1>
-        </div>
+        {this.state.shows && (
+          <Card  style={{ width: '18rem' }}>
+            <Card.Img  variant="top" src={image} />
+            <Card.Body >
+              <Card.Title >{this.state.person.fullName}</Card.Title>
+              <Card.Text>
+                {this.state.person.bio} <br/>
+                {this.state.person.profession}
+              </Card.Text>
+            
+            </Card.Body>
+          </Card>
+        )}
+
+        <Button className="bt" onClick={this.handleClick}>
+          {this.state.shows ? "Hide Profile" : "Show Profile"}
+        </Button>
+        <h1>{this.state.mountTime}</h1>
+      </div>  
       );
     
   }}
